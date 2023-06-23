@@ -1,0 +1,69 @@
+{
+    "GPU": "True",
+    "data": {
+        "keystroke_sequence_len": 50,
+        "imu_sequence_len": 100,
+        "humi": {
+            "dataset_url": "http://atvs.ii.uam.es/atvs/intranet/free_DB/HuMIDB/HuMI.zip",
+            "username": "",
+            "password": "",
+            "windowing_offset": 1
+        },
+        "hmog": {
+            "dataset_url": "https://dl2.boxcloud.com/d/1/b1!CWhYaLAilv1g1AznhFcg15j0wCJ-o_Q9aKn-29tTBTd0by8IAAtyE_ycbFyjwXh9hmPK7tipbcijuY-OL5h1IaBYqI-cLDxsyCHRau7Nvz2L1UtnsBUNT2kGrCNB_Y_Wh0FvIanJilq_ECtmQflXVkNACWxRZLasCMkMPfO_ADSxr6Tq9C9Nkv0cHGq9H_nPjkDZMm5FgxsmwIjQzNfRBKFCGKGZ4OYi_IPKlPIu15d25SEPw5jbfC4Q5yWIvUBntLcYUT5OL2cd-lAk9uq9CyZ_dJfoqsWWO874VvuAr5lM6Aej7MFWIXpZ8LCmPq1QVDGkXmGAwugJVEH2ZFByWg4FFVWK1asVyMwG0H421u6b9yS7b54AaUA6kY3o0aclbhvl0-Cq1ze5iWun_WOg8ITMBtEldxAA-d7ll2VUAIH8XLPyjrnRFe9kpVjXkbWvdwq7Cxso56aX5RjBybkipwsruTk8VIOk6LbK3Rn5TZg_MV2ldOZmcbZywSnhEXXZ7L2G7nc7A15kYZrGeHiimk6dMRrQTOIMIwSZ7cyB3rV3eS_y6pu4ZzdocyUtz1Ze6HyTeTiY8o_UD7Fjks6zAPhZkkCLDm9JrS9-n9nkmi31S6Bde3YnXz_bagbT7yekdZPOxzBI8M2eGzMFq2YQ5iMnwUEhxB_lhWj9BbqN-_BveJmOib5jg76x3800A_yIxciLursH9M6YdKpXPoQxx2ZvJDPC-YfdTgh7Jx0RQsocQKJ_9Y-nAyxkJEISa_Q78fwVMFWwKfVrP5RFOl5vR2ehAX4-Lq2w22cITGxknCzp9vj0MBpY_CAbgW01hBZcwBozhSESl9r5n-zETAEZj7St2Yd-PI1Q4SJdAnHZ1FPmM2Aeg8RkB9bEVsKsVVlXjQJSH38NQw20H4fQGaDmB8vliB97We8CIBEy10VGJmhuTKWYsvp2LkPPUWTIJ1IrrwVuuAgbZNpw8Zav5wYKSflkoZETst6zKhNpkS8BHHCoNM9fX6xzmf6p9BBm_TKgM8pn9IaDwGyLalQKYoRawa0D-jRJ27RV3YHhCkWFf63ebqxxbq5ABZWjoAkiCSg4R2liTxbjiRiQgXlCLmYMm4lzoXr3T2g3VjOGgoEmGJ9Z8MmfffSSCUh-0kChNOljIGPrjowdJE95ih1_cV90lfWoncl-8JMnmaCIs1NGiqun4tcdhwPq8-OAL9bwl1tqre97hT_Z6i6NF0t1UzoXGXFszcXU8JPiQimknwjAZDzabXT2Q_tc2nmmQZtpJkbo0-T8MA../download",
+            "windowing_offset": 5
+        },
+        "aalto": {
+            "dataset_url": "https://userinterfaces.aalto.fi/typing37k/data/csv_raw_and_processed.zip"
+        }
+    },
+    "preprocessed_data": {
+        "aalto": {
+            "keystroke": ""
+        },
+        "hmog": {
+            "train": "",
+            "test": "",
+            "val": ""
+        },
+        "humi": {
+            "train": "",
+            "test": "",
+            "val": ""
+        }
+    },
+    "hyperparams": {
+        "batch_size": {
+            "aalto": 1024,
+            "humi": 64,
+            "hmog": 64
+        },
+        "epoch_batch_count": {
+            "aalto": 29,
+            "humi": 100,
+            "hmog": 100
+        },
+        "keystroke_feature_count": {
+            "aalto": 10,
+            "humi": 3,
+            "hmog": 10
+        },
+        "imu_feature_count": {
+            "one_type": 12,
+            "two_types": 24,
+            "all": 36
+        },
+        "target_len": 64,
+        "number_of_enrollment_sessions": {
+            "aalto": 10,
+            "humi": 3,
+            "hmog": 3
+        },
+        "number_of_verify_sessions": {
+            "aalto": 5,
+            "humi": 2,
+            "hmog": 5
+        },
+        "learning_rate": 0.001
+    }
+}
