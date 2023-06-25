@@ -26,15 +26,15 @@ Before training, preprocessed and feature extracted data files (training, valida
 To begin the preprocessing process, configure the settings in the `config.json` file. Configure below fields before generating data files for the relevant dataset.
 
     - AaltoDB preprocessing
-      - `data → aalto → {dataset_url}`
+      - data → aalto → {dataset_url}
   
     - HMOGDB preprocessing
-      - `data → {keystroke_sequence_len, imu_sequence_len}`
-      - `data → hmog → {dataset_url, windowing_offset}`
+      - data → {keystroke_sequence_len, imu_sequence_len}
+      - data → hmog → {dataset_url, windowing_offset}
 
     - HuMIdb preprocessing
-        `data → {keystroke_sequence_len, imu_sequence_len}`
-      - `data → hmog → {dataset_url, username, password, windowing_offset}`
+      - data → {keystroke_sequence_len, imu_sequence_len}
+      - data → hmog → {dataset_url, username, password, windowing_offset}
 
 - Preprocessing
 
