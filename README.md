@@ -20,6 +20,48 @@ Continuous Authentication using behavioural biometrics is a type of biometric id
 # Preprocessing and Feature Creation
 
 # Training
+-Setting up configs
+To begin the training process, configure the settings in the "config.json" file. Within this file, specify the Google Drive share IDs for the train, test, and validation files of each dataset. These file ids can be filled under "preprocessed_data → dataset → train, test, val".
+
+-Training
+To begin, create a zip file containing the code base and copy it into your Colab notebook. Next, unzip the file using the command `!unzip /content/BehaveFormer.zip`. Finally, install the necessary packages mentioned in the requirements.txt file by running the command `!pip install -r /content/BehaveFormer/requirements.txt`.
+
+For traing consider the following commands :
+|       Experiment       |                     Type                    |                                                Run Command                                               |
+|:----------------------:|:-------------------------------------------:|:--------------------------------------------------------------------------------------------------------:|
+| Keystroke              | Keystroke                                   | `!python /content/BehaveFormer/experiments/keystroke/HMOGDB/train.py epoch_count`                          |
+| Keystroke_IMU combined | Keystroke + Accelerometer                   | `!python /content/BehaveFormer/experiments/keystroke_imu_combined/HMOGDB/imu_acc/train.py epoch_count`     |
+|                        | Keystroke + Gyroscope                       | `!python /content/BehaveFormer/experiments/keystroke_imu_combined/HMOGDB/imu_gyr/train.py epoch_count`     |
+|                        | Keystroke + Magnetometer                    | `!python /content/BehaveFormer/experiments/keystroke_imu_combined/HMOGDB/imu_mag/train.py epoch_count`     |
+|                        | Keystroke + Acc. + Gyroscope                | `!python /content/BehaveFormer/experiments/keystroke_imu_combined/HMOGDB/imu_acc_gyr/train.py epoch_count` |
+|                        | Keystroke + Acc. + Magnetometer             | `!python /content/BehaveFormer/experiments/keystroke_imu_combined/HMOGDB/imu_acc_mag/train.py epoch_count` |
+|                        | Keystroke + Magnetometer + Gyroscope        | `!python /content/BehaveFormer/experiments/keystroke_imu_combined/HMOGDB/imu_mag_gyr/train.py epoch_count` |
+|                        | Keystroke + Acc. + Gyroscope + Magnetometer | `!python /content/BehaveFormer/experiments/keystroke_imu_combined/HMOGDB/imu_all/train.py epoch_count`     |
+| Transfer Learning      | Keystroke                                   | `!python /content/BehaveFormer/experiments/transfer_learning/train_HMOGDB.py epoch_count`                  |
+
+To run the commands for AaltoDB or HuMIdb, replace "HMOGDB" with the respective dataset name. Additionally, replace "epoch_count" with the desired number of epochs. For example, to train using AaltoDB for 200 epochs, use the following command: `!python /content/BehaveFormer/experiments/keystroke/AaltoDB/train.py 200`. Similarly, for HuMIdb with 300 epochs, use: `!python /content/BehaveFormer/experiments/keystroke/HuMIdb/train.py 300`.
+
+-Folder Structure
+During the training process, two folders are created in the directory of the train.py script: "best_models" and "checkpoints".
+
+The "best_models" folder is used to store models that exhibit improved Equal Error Rate (EER) compared to the previous epoch. These models are saved as ".pt" files, with the file name indicating the epoch number and the improved EER.
+
+On the other hand, the "checkpoints" folder is used to save checkpoints at regular intervals, specifically after every 50 epochs. These checkpoints are stored as ".tar" files, with the file name denoting the epoch number and the corresponding EER.
+
+-Training Continue
+If you are unable to complete the full epoch count in one attempt or wish to train for additional epochs, you can utilize the training continue feature. To do so, update the previous run commands as shown below:
+
+To continue training the Keystroke model for HMOGDB:
+```
+!python /content/BehaveFormer/experiments/keystroke/HMOGDB/train.py epoch_count last_trained_epoch
+```
+Replace "epoch_count" with the total number of epochs you want to train, and "last_trained_epoch" with the epoch number you last trained up to. 
+
+For example:
+```
+!python /content/BehaveFormer/experiments/keystroke/HMOGDB/train.py 100 50
+```
+This command will continue the training process for 100 epochs, starting from the 51st epoch.
 
 # Evaluation
 
