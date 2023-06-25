@@ -20,11 +20,13 @@ Continuous Authentication using behavioural biometrics is a type of biometric id
 # Preprocessing and Feature Creation
 
 # Training
--Setting up configs
-To begin the training process, configure the settings in the "config.json" file. Within this file, specify the Google Drive share IDs for the train, test, and validation files of each dataset. These file ids can be filled under "preprocessed_data → dataset → train, test, val".
+- Setting up configs
 
--Training
-To begin, create a zip file containing the code base and copy it into your Colab notebook. Next, unzip the file using the command `!unzip /content/BehaveFormer.zip`. Finally, install the necessary packages mentioned in the requirements.txt file by running the command `!pip install -r /content/BehaveFormer/requirements.txt`.
+To begin the training process, configure the settings in the `config.json` file. Within this file, specify the Google Drive share IDs for the train, test, and validation files of each dataset. These file ids can be filled under `preprocessed_data → dataset → {train, test, val}`.
+
+- Training
+
+To begin, create a zip file containing the code base and copy it into your notebook. Next, unzip the file using the command `!unzip BehaveFormer.zip`. Finally, install the necessary packages mentioned in the requirements.txt file by running the command `!pip install -r BehaveFormer/requirements.txt`.
 
 For traing consider the following commands :
 |       Experiment       |                     Type                    |                                                Run Command                                               |
@@ -41,25 +43,27 @@ For traing consider the following commands :
 
 To run the commands for AaltoDB or HuMIdb, replace "hmog" with the respective dataset name. Additionally, replace "epoch_count" with the desired number of epochs. For example, to train using AaltoDB for 200 epochs, use the following command: `!python run.py --model keystroke --mode train --dataset aalto --epochs 200`. Similarly, for HuMIdb with 300 epochs, use: `!python run.py --model keystroke --mode train --dataset humi --epochs 300`.
 
--Folder Structure
+- Folder Structure
+
 During the training process, two folders are created in the directory of the train.py script: "best_models" and "checkpoints".
 
 The "best_models" folder is used to store models that exhibit improved Equal Error Rate (EER) compared to the previous epoch. These models are saved as ".pt" files, with the file name indicating the epoch number and the improved EER.
 
-On the other hand, the "checkpoints" folder is used to save checkpoints at regular intervals, specifically after every 50 epochs. These checkpoints are stored as ".tar" files, with the file name denoting the epoch number and the corresponding EER.
+On the other hand, the "checkpoints" folder is used to save checkpoints at regular intervals, specifically after every 50 epochs. These checkpoints are stored as ".tar" files, with the file name denoting the epoch number.
 
--Training Continue
+- Training Continue
+
 If you are unable to complete the full epoch count in one attempt or wish to train for additional epochs, you can utilize the training continue feature. To do so, update the previous run commands as shown below:
 
 To continue training the Keystroke model for HMOGDB:
 ```
-!python run.py --model keystroke --mode train --dataset hmog --initepoch last_trained_epoch --epochs epoch_count 
+!python run.py --model keystroke --mode continue_train --dataset hmog --initepoch last_trained_epoch --epochs epoch_count 
 ```
 Replace "epoch_count" with the total number of epochs you want to train, and "last_trained_epoch" with the epoch number you last trained up to. 
 
 For example:
 ```
-!python run.py --model keystroke --mode train --dataset hmog --initepoch 50 --epochs 100
+!python run.py --model keystroke --mode continue_train --dataset hmog --initepoch 50 --epochs 100
 ```
 This command will continue the training process for 100 epochs, starting from the 51st epoch.
 
