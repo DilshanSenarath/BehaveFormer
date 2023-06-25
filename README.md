@@ -23,3 +23,11 @@ Continuous Authentication using behavioural biometrics is a type of biometric id
 
 # Evaluation
 
+# References
+[1] - Our Paper
+
+[2] - K. Palin, A. M. Feit, S. Kim, P. O. Kristensson, and A. Oulasvirta. How do people type on mobile devices? observations from a study with 37,000 volunteers. In Proceedings of the 21st International Conference on Human-Computer Interaction with Mobile Devices and Services, pages 1–12, Taipei, Taiwan, 2019.
+
+[3] - Z. Sitov ́a, J. ˇSedˇenka, Q. Yang, G. Peng, G. Zhou, P. Gasti, and K. S. Balagani. Hmog: New behavioral biometric features for continuous authentication of smartphone users. IEEE Transactions on Information Forensics and Security, 11(5):877–892, 2016.
+
+[4] - A. Acien, A. Morales, J. Fierrez, R. Vera-Rodriguez, and O. Delgado-Mohatar. Becaptcha: Behavioral bot detection using touchscreen and mobile sensors benchmarked on humidb. Engineering Applications of Artificial Intelligence, 98:104058, 2021.
