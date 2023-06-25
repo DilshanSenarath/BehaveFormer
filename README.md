@@ -69,6 +69,24 @@ This command will continue the training process for 100 epochs, starting from th
 
 # Evaluation
 
+After training the models, the instances of the best models are saved into the `best_models` directory within each model script directory. You can utilize these instances to evaluate the trained models, as indicated in the following command,
+
+```
+!python run.py --model keystroke --mode test --dataset aalto --metric basic --testfile epoch_9_eer_15.428571428571416.pt 
+```
+
+You can replace `--model`, `--dataset`, and add `--imu` parameters to test all different models indicated in training section. `--testfile` parameter can be updated with any model instance name stored in `best_models` directory. 
+
+There are thress types of metrics you can calculate through this evaluation process. Therefore, you can specify three different values for `--metric` paramter as indicated in the following description.
+
+- `basic` - EER (Equal Error Rate), Usability, TCR (Time to Correct Reject), FRWI (Flase Reject Worse Interval), and FAWI (False Accept Worse Interval) can be calculated using this keyword.
+- `det` - The required data to draw the det curve, is calulated using this keyword.
+- `pca` - t-SNE curve is generated for 10 different randomly selected test users. Additionally, silhouette score is generated providing the goodness of the clustering.
+
+During the evaluation process, one folder is created in the directory of the `test.py` script: `results`.
+
+Inside the result directory, `basic.csv`, `far-frr.csv`, `pca-graph.png`, and `silhouette_score.csv` are generated based on the provided `--metric` keyword.
+
 # References
 [1] - Our Paper
 
