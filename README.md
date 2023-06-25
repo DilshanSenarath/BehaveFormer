@@ -19,6 +19,35 @@ Continuous Authentication using behavioural biometrics is a type of biometric id
 
 # Preprocessing and Feature Creation
 
+Before training, preprocessed and feature extracted data files (training, validation, testing) must be created.
+
+- Setting up configs
+
+To begin the preprocessing process, configure the settings in the `config.json` file. Configure below fields before generating data files for the relevant dataset.
+
+    - AaltoDB preprocessing
+      - `data → aalto → {dataset_url}`
+  
+    - HMOGDB preprocessing
+      - `data → {keystroke_sequence_len, imu_sequence_len}`
+      - `data → hmog → {dataset_url, windowing_offset}`
+
+    - HuMIdb preprocessing
+        `data → {keystroke_sequence_len, imu_sequence_len}`
+      - `data → hmog → {dataset_url, username, password, windowing_offset}`
+
+- Preprocessing
+
+To begin, create a zip file containing the code base and copy it into your notebook. Next, unzip the file using the command `!unzip BehaveFormer.zip`. Next, install the necessary packages mentioned in the requirements.txt file by running the command `!pip install -r BehaveFormer/requirements.txt`. Finally, mount your Google Drive to the notebook as the output files will be saved to Google Drive.
+
+For preprocessing, consider the following commands :
+
+|    Dataset    |                  Run Command                       |        Output Folder        |
+|:-------------:|:--------------------------------------------------:|:---------------------------:|
+|    AaltoDB    | `!python run.py --mode preprocess --dataset aalto` | drive/MyDrive/              |
+|    HMOGDB     | `!python run.py --mode preprocess --dataset hmog`  | drive/MyDrive/HMOG_Dataset/ |
+|    HuMIdb     | `!python run.py --mode preprocess --dataset humi`  | drive/MyDrive/HuMI_Dataset/ |
+
 # Training
 - Setting up configs
 
