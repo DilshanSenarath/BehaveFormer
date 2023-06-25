@@ -79,9 +79,9 @@ You can replace `--model`, `--dataset`, and add `--imu` parameters to test all d
 
 There are thress types of metrics you can calculate through this evaluation process. Therefore, you can specify three different values for `--metric` paramter as indicated in the following description.
 
-- `basic` - EER (Equal Error Rate), Usability, TCR (Time to Correct Reject), FRWI (Flase Reject Worse Interval), and FAWI (False Accept Worse Interval) can be calculated using this keywork.
+- `basic` - EER (Equal Error Rate), Usability, TCR (Time to Correct Reject), FRWI (Flase Reject Worse Interval), and FAWI (False Accept Worse Interval) can be calculated using this keyword.
 - `det` - The required data to draw the det curve, is calulated using this keyword.
-- `pca` - t-SNE curve is generated for 10 different randomly selected test users. Additionally, silhouette score also is generated related to the clustering.
+- `pca` - t-SNE curve is generated for 10 different randomly selected test users. Additionally, silhouette score is generated providing the goodness of the clustering.
 
 During the evaluation process, one folder is created in the directory of the `test.py` script: `results`.
 
