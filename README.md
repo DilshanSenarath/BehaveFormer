@@ -39,17 +39,17 @@ For traing consider the following commands :
 | Keystroke_IMU combined | Keystroke + Acc. + Magnetometer             | `!python run.py --model keystroke_imu --mode train --dataset hmog --imu acc_mag --epochs epoch_count` |
 | Keystroke_IMU combined | Keystroke + Magnetometer + Gyroscope        | `!python run.py --model keystroke_imu --mode train --dataset hmog --imu mag_gyr --epochs epoch_count` |
 | Keystroke_IMU combined | Keystroke + Acc. + Gyroscope + Magnetometer | `!python run.py --model keystroke_imu --mode train --dataset hmog --imu all --epochs epoch_count`     |
-| Transfer Learning      | Keystroke                                   | `!python run.py --model tl --mode train --dataset hmog --epochs epoch_count`                  |
+| Transfer Learning      | Keystroke                                   | Initil train - `!python run.py --model tl --mode train --dataset aalto --epochs epoch_count` , Tuning - `!python run.py --model tl --mode continue_train --dataset hmog --initepoch last_trained_epoch --epochs epoch_count`                  |
 
-To run the commands for AaltoDB or HuMIdb, replace "hmog" with the respective dataset name. Additionally, replace "epoch_count" with the desired number of epochs. For example, to train using AaltoDB for 200 epochs, use the following command: `!python run.py --model keystroke --mode train --dataset aalto --epochs 200`. Similarly, for HuMIdb with 300 epochs, use: `!python run.py --model keystroke --mode train --dataset humi --epochs 300`.
+To run the commands for keystroke or keystroke_IMU combined scenarios with AaltoDB or HuMIdb, replace `hmog` with the respective dataset name. Additionally, replace `epoch_count` with the desired number of epochs. For example, to train using AaltoDB for 200 epochs, use the following command: `!python run.py --model keystroke --mode train --dataset aalto --epochs 200`. Similarly, for HuMIdb with 300 epochs, use: `!python run.py --model keystroke --mode train --dataset humi --epochs 300`.
 
 - Folder Structure
 
-During the training process, two folders are created in the directory of the train.py script: "best_models" and "checkpoints".
+During the training process, two folders are created in the directory of the train.py script: `best_models` and `checkpoints`.
 
-The "best_models" folder is used to store models that exhibit improved Equal Error Rate (EER) compared to the previous epoch. These models are saved as ".pt" files, with the file name indicating the epoch number and the improved EER.
+The `best_models` folder is used to store models that exhibit improved Equal Error Rate (EER) compared to the previous epoch. These models are saved as `.pt` files, with the file name indicating the epoch number and the improved EER.
 
-On the other hand, the "checkpoints" folder is used to save checkpoints at regular intervals, specifically after every 50 epochs. These checkpoints are stored as ".tar" files, with the file name denoting the epoch number.
+On the other hand, the `checkpoints` folder is used to save checkpoints at regular intervals, specifically after every 50 epochs. These checkpoints are stored as `.tar` files, with the file name denoting the epoch number.
 
 - Training Continue
 
