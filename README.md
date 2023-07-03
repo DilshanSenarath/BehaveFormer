@@ -117,7 +117,8 @@ During the evaluation process, one folder is created in the directory of the `te
 Inside the result directory, `basic.csv`, `far-frr.csv`, `pca-graph.png`, and `silhouette_score.csv` are generated based on the provided `--metric` keyword.
 
 # References
-[1] - Our Paper
+[1] - . Senarath, S. Tharinda, M. Vishvajith, S. Rasnayaka,S. Wickramanayake, and D. Meedeniya. Re-evaluating keystroke dynamics for continuous authentication. In 2023
+3rd International Conference on Advanced Research in Computing (ICARC), pages 202–207, 2023
 
 [2] - K. Palin, A. M. Feit, S. Kim, P. O. Kristensson, and A. Oulasvirta. How do people type on mobile devices? observations from a study with 37,000 volunteers. In Proceedings of the 21st International Conference on Human-Computer Interaction with Mobile Devices and Services, pages 1–12, Taipei, Taiwan, 2019.
 
