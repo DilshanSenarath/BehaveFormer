@@ -118,15 +118,13 @@ Inside the result directory, `basic.csv`, `far-frr.csv`, `pca-graph.png`, and `s
 
 # Experiments Weights
 
-The model weights of our experiments is included in <a href="drivelink" style="padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px; cursor: pointer;">this drive folder</a>.
+The model weights of our experiments is included in <a href="https://drive.google.com/drive/folders/1NMj8AYgD9dn4_x1-6eq-EAfQI0hDER_w?usp=sharing" style="padding: 5px 8px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px; cursor: pointer;">this drive folder</a>.
 
-- Folder Structure
+- Folder Structure - The folder structure is similar to the structure of experiments folder in this source code. A folder that correspons to an experiment belonging to a particular dataset contains three files.
 
-The folder structure is similar to the structure of experiments folder in this source code. A folder that correspons to an experiment belonging to a particular dataset contains three files.
-
-* Results - `Results.xlsx` contains that particular experiment's results.
-* Best EER Checkpoint - The checkpoint file that corresponds to the best EER value obtained. The file has the format `epoch<best_eer_epoch_number>_eer_<eer_value>.pt`.
-* Training file - The saved model training file. The file has the format `training_<trained_epoch_number>`
+  - Results - `Results.xlsx` contains that particular experiment's results.
+  - Best EER Checkpoint - The checkpoint file that corresponds to the best EER value obtained. The file has the format `epoch_<best_eer_epoch_number>_eer_<eer_value>.pt`.
+  - Training file - The saved model training file. The file has the format `training_<trained_epoch_number>`
 
 # References
 [1] - . Senarath, S. Tharinda, M. Vishvajith, S. Rasnayaka,S. Wickramanayake, and D. Meedeniya. Re-evaluating keystroke dynamics for continuous authentication. In 2023
