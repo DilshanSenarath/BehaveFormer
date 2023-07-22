@@ -1,4 +1,5 @@
 # BehaveFormer: A Framework with Spatio-Temporal Dual Attention Transformers for IMU enhanced Keystroke Dynamics
+# Accepted at IJCB 2023: [Arxiv](https://arxiv.org/abs/2307.11000)
 Welcome to the BehaveFormer repository! This repository presents an innovative framework proposed in our research paper [1] that combines keystroke dynamics and Inertial Measurement Unit (IMU) data to create a reliable and accurate Continuous Authentication (CA) system based on behavioural biometrics. Our approach introduces the Spatio-Temporal Dual Attention Transformers (STDAT), a novel transformer architecture that extracts highly discriminative features from keystroke dynamics. By incorporating IMU data, BehaveFormer significantly improves the discriminative power of keystroke dynamics authentication. We invite you to explore this repository and leverage the power of BehaveFormer to enhance the security and usability of CA systems.
 
 # Abstract
@@ -121,6 +122,18 @@ Inside the result directory, `basic.csv`, `far-frr.csv`, `pca-graph.png`, and `s
 The model weights of our experiments is included in <a href="https://drive.google.com/drive/folders/1NMj8AYgD9dn4_x1-6eq-EAfQI0hDER_w?usp=sharing" style="padding: 5px 8px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px; cursor: pointer;">this drive folder</a>.
 
 - Folder Structure - The folder structure is similar to the structure of experiments folder in this source code. A folder that correspons to an experiment belonging to a particular dataset contains the model weights file.
+
+## Citation ##
+If you use any of the code provided in this repository or the models provided, please cite the following paper:
+```
+@InProceedings{Senerath_2023_IJCB,
+    author    = {D. Senerath, S. Tharinda, M. Vishwajith, S. Rasnayaka, S. Wickramanayake, and D. Meedeniya},
+    title     = {BehaveFormer: A Framework with Spatio-Temporal Dual Attention Transformers for IMU enhanced Keystroke Dynamics},
+    booktitle = {{IEEE} International Joint Conference on Biometrics, {IJCB} 2023},
+    month     = {September},
+    year      = {2023}
+}
+```
 
 # References
 [1] - D. Senerath, S. Tharinda, M. Vishwajith, S. Rasnayaka, S. Wickramanayake, and D. Meedeniya, “BehaveFormer: A Framework with Spatio-Temporal Dual Attention Transformers for IMU enhanced Keystroke Dynamics,” arXiv.org, Jul. 03, 2023. https://arxiv.org/abs/2307.11000 (accessed Jul. 21, 2023).
