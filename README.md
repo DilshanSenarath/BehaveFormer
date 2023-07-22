@@ -136,7 +136,7 @@ If you use any of the code provided in this repository or the models provided, p
 ```
 
 # References
-[1] - D. Senerath, S. Tharinda, M. Vishwajith, S. Rasnayaka, S. Wickramanayake, and D. Meedeniya, “BehaveFormer: A Framework with Spatio-Temporal Dual Attention Transformers for IMU enhanced Keystroke Dynamics,” arXiv.org, Jul. 03, 2023. https://arxiv.org/abs/2307.11000 (accessed Jul. 21, 2023).
+[1] - D. Senarath, S. Tharinda, M. Vishvajith, S. Rasnayaka, S. Wickramanayake and D. Meedeniya, "Re-evaluating Keystroke Dynamics for Continuous Authentication," 2023 3rd International Conference on Advanced Research in Computing (ICARC), Belihuloya, Sri Lanka, 2023, pp. 202-207, doi: 10.1109/ICARC57651.2023.10145743.
 
 [2] - K. Palin, A. M. Feit, S. Kim, P. O. Kristensson, and A. Oulasvirta. How do people type on mobile devices? observations from a study with 37,000 volunteers. In Proceedings of the 21st International Conference on Human-Computer Interaction with Mobile Devices and Services, pages 1–12, Taipei, Taiwan, 2019.
 
