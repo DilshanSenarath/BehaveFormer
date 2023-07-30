@@ -44,9 +44,9 @@ For preprocessing, consider the following commands :
 
 |    Dataset    |                  Run Command                       |        Output Folder        |
 |:-------------:|:--------------------------------------------------:|:---------------------------:|
-|    AaltoDB    | `!python run.py --mode preprocess --dataset aalto` | drive/MyDrive/              |
-|    HMOGDB     | `!python run.py --mode preprocess --dataset hmog`  | drive/MyDrive/HMOG_Dataset/ |
-|    HuMIdb     | `!python run.py --mode preprocess --dataset humi`  | drive/MyDrive/HuMI_Dataset/ |
+|    AaltoDB    | `!python BehaveFormer/run.py --mode preprocess --dataset aalto` | drive/MyDrive/              |
+|    HMOGDB     | `!python BehaveFormer/run.py --mode preprocess --dataset hmog`  | drive/MyDrive/HMOG_Dataset/ |
+|    HuMIdb     | `!python BehaveFormer/run.py --mode preprocess --dataset humi`  | drive/MyDrive/HuMI_Dataset/ |
 
 ## Training
 - Setting up configs
@@ -60,17 +60,17 @@ To begin, create a zip file containing the code base and copy it into your noteb
 For traing consider the following commands :
 |       Experiment       |                     Type                    |                                                Run Command                                               |
 |:----------------------:|:-------------------------------------------:|:--------------------------------------------------------------------------------------------------------:|
-| Keystroke              | Keystroke                                   | `!python run.py --model keystroke --mode train --dataset hmog --epochs epoch_count`                          |
-| Keystroke_IMU combined | Keystroke + Accelerometer                   | `!python run.py --model keystroke_imu --mode train --dataset hmog --imu acc --epochs epoch_count`     |
-| Keystroke_IMU combined | Keystroke + Gyroscope                       | `!python run.py --model keystroke_imu --mode train --dataset hmog --imu gyr --epochs epoch_count`     |
-| Keystroke_IMU combined | Keystroke + Magnetometer                    | `!python run.py --model keystroke_imu --mode train --dataset hmog --imu mag --epochs epoch_count`     |
-| Keystroke_IMU combined | Keystroke + Acc. + Gyroscope                | `!python run.py --model keystroke_imu --mode train --dataset hmog --imu acc_gyr --epochs epoch_count` |
-| Keystroke_IMU combined | Keystroke + Acc. + Magnetometer             | `!python run.py --model keystroke_imu --mode train --dataset hmog --imu acc_mag --epochs epoch_count` |
-| Keystroke_IMU combined | Keystroke + Magnetometer + Gyroscope        | `!python run.py --model keystroke_imu --mode train --dataset hmog --imu mag_gyr --epochs epoch_count` |
-| Keystroke_IMU combined | Keystroke + Acc. + Gyroscope + Magnetometer | `!python run.py --model keystroke_imu --mode train --dataset hmog --imu all --epochs epoch_count`     |
-| Transfer Learning      | Keystroke                                   | Initial train - `!python run.py --model tl --mode train --dataset aalto --epochs epoch_count` , Tuning - `!python run.py --model tl --mode continue_train --dataset hmog --initepoch last_trained_epoch --epochs epoch_count`                  |
+| Keystroke              | Keystroke                                   | `!python BehaveFormer/run.py --model keystroke --mode train --dataset hmog --epochs epoch_count`                          |
+| Keystroke_IMU combined | Keystroke + Accelerometer                   | `!python BehaveFormer/run.py --model keystroke_imu --mode train --dataset hmog --imu acc --epochs epoch_count`     |
+| Keystroke_IMU combined | Keystroke + Gyroscope                       | `!python BehaveFormer/run.py --model keystroke_imu --mode train --dataset hmog --imu gyr --epochs epoch_count`     |
+| Keystroke_IMU combined | Keystroke + Magnetometer                    | `!python BehaveFormer/run.py --model keystroke_imu --mode train --dataset hmog --imu mag --epochs epoch_count`     |
+| Keystroke_IMU combined | Keystroke + Acc. + Gyroscope                | `!python BehaveFormer/run.py --model keystroke_imu --mode train --dataset hmog --imu acc_gyr --epochs epoch_count` |
+| Keystroke_IMU combined | Keystroke + Acc. + Magnetometer             | `!python BehaveFormer/run.py --model keystroke_imu --mode train --dataset hmog --imu acc_mag --epochs epoch_count` |
+| Keystroke_IMU combined | Keystroke + Magnetometer + Gyroscope        | `!python BehaveFormer/run.py --model keystroke_imu --mode train --dataset hmog --imu mag_gyr --epochs epoch_count` |
+| Keystroke_IMU combined | Keystroke + Acc. + Gyroscope + Magnetometer | `!python BehaveFormer/run.py --model keystroke_imu --mode train --dataset hmog --imu all --epochs epoch_count`     |
+| Transfer Learning      | Keystroke                                   | Initial train - `!python BehaveFormer/run.py --model tl --mode train --dataset aalto --epochs epoch_count` , Tuning - `!python BehaveFormer/run.py --model tl --mode continue_train --dataset hmog --initepoch last_trained_epoch --epochs epoch_count`                  |
 
-To run the commands for keystroke or keystroke_IMU combined scenarios with AaltoDB or HuMIdb, replace `hmog` with the respective dataset name. Additionally, replace `epoch_count` with the desired number of epochs. For example, to train using AaltoDB for 200 epochs, use the following command: `!python run.py --model keystroke --mode train --dataset aalto --epochs 200`. Similarly, for HuMIdb with 300 epochs, use: `!python run.py --model keystroke --mode train --dataset humi --epochs 300`.
+To run the commands for keystroke or keystroke_IMU combined scenarios with AaltoDB or HuMIdb, replace `hmog` with the respective dataset name. Additionally, replace `epoch_count` with the desired number of epochs. For example, to train using AaltoDB for 200 epochs, use the following command: `!python BehaveFormer/run.py --model keystroke --mode train --dataset aalto --epochs 200`. Similarly, for HuMIdb with 300 epochs, use: `!python BehaveFormer/run.py --model keystroke --mode train --dataset humi --epochs 300`.
 
 - Folder Structure
 
@@ -86,13 +86,13 @@ If you are unable to complete the full epoch count in one attempt or wish to tra
 
 To continue training the Keystroke model for HMOGDB:
 ```
-!python run.py --model keystroke --mode continue_train --dataset hmog --initepoch last_trained_epoch --epochs epoch_count 
+!python BehaveFormer/run.py --model keystroke --mode continue_train --dataset hmog --initepoch last_trained_epoch --epochs epoch_count 
 ```
 Replace "epoch_count" with the total number of epochs you want to train, and "last_trained_epoch" with the epoch number you last trained up to. 
 
 For example:
 ```
-!python run.py --model keystroke --mode continue_train --dataset hmog --initepoch 50 --epochs 100
+!python BehaveFormer/run.py --model keystroke --mode continue_train --dataset hmog --initepoch 50 --epochs 100
 ```
 This command will continue the training process for 100 epochs, starting from the 51st epoch.
 
@@ -101,7 +101,7 @@ This command will continue the training process for 100 epochs, starting from th
 After training the models, the instances of the best models are saved into the `best_models` directory within each model script directory. You can utilize these instances to evaluate the trained models, as indicated in the following command,
 
 ```
-!python run.py --model keystroke --mode test --dataset aalto --metric basic --testfile epoch_9_eer_15.428571428571416.pt 
+!python BehaveFormer/run.py --model keystroke --mode test --dataset aalto --metric basic --testfile epoch_9_eer_15.428571428571416.pt 
 ```
 
 You can replace `--model`, `--dataset`, and add `--imu` parameters to test all different models indicated in training section. `--testfile` parameter can be updated with any model instance name stored in `best_models` directory. 
