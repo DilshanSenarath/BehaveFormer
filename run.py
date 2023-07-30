@@ -69,6 +69,6 @@ if __name__ == "__main__":
                     elif (args.mode == "continue_train"):
                         subprocess.run(f"python {Map[args.model]/Map[args.dataset]}/train.py {args.epochs} {args.initepoch}", shell=True)
         else:
-            subprocess.run(f"python {str((Path(__file__)/'../').resolve())}data/{Map[args.dataset]/args.mode}.py", shell=True)
+            subprocess.run(f"python {str((Path(__file__)/'../').resolve())}/data/{Map[args.dataset]}/{args.mode}.py", shell=True)
     else:
         raise ValueError("Please give correct values for arguments")
